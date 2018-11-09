@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title>Home - Beyond the Headlines</title>
+    {% endif %}
+</head>
+
+<body>
+    <div class="message">
+        <h1>{{message}}</h1>
+    </div>
+   
+    <h1>Hello{{id}}</h1>
+
+</body>
+</html>
+<style>
+    .message {
+        font-style: Italic;
+        color: black;
+    }
+</style>
+
+

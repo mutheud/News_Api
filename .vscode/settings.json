@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "virtual/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black"
+}
