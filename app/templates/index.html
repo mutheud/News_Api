@@ -1,16 +1,34 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
 
 <head>
+    
     <meta charset="utf-8">
     {% if title %}
     <title> {{ title }}</title>
     {% else %}
     <title>Home - Beyond the Headlines</title>
     {% endif %}
+    
 </head>
 
 <body>
+    <!-- {% if news %}
+    <li> {{ news }}</li>
+    {% else %}
+    <li> no news</li>
+    {% endif %}
+    <ul>
+        {% for news in news_list%} 
+        <li>{{ news.title}}</li>
+        {% endfor %}
+    </ul>-->
+    <h3> News</h3>
+    <ul>
+        {{ macro.displayNewsList(Science)}}
+    </ul>
+
     <div class="message">
         <h1>{{message}}</h1>
     </div>
