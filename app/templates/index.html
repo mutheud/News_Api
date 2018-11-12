@@ -1,35 +1,60 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title>Home - Beyond the Headlines</title>
-    {% endif %}
-    
-</head>
-
-<body>
-    
-    <!-- <ul>
-        {% for news in news_list%} 
-        <li>{{ news.title}}</li>
-        {% endfor %}
-    </ul> -->
-    <!-- Content block -->
     {% block content %}
-    <h1>HEADLINES</h1>
-    <div class="card">
-        {{ macro.displayNewsList(news)}}
-        </div>
-    {% endblock%}
-    
-</body>
-</html>
+   
+    <h3> Business News</h3>
+    <ul>
+        {% for business_news in business %}
+        <li><a href="{{ business_news.url}}">{{ business_news.name}}</a></li>
+        {% endfor %}
+    </ul>
+    <h3> Entertainment News</h3>
+    <ul>
+        {% for entertainment_news in entertainment %}
+        <li><a href="{{ entertainment_news.url}}">{{ entertainment_news.name}}</a></li>
+       
+        {% endfor %}
+    </ul>
+    <h3>  General News</h3>
+    <ul>
+        {% for general_news in general %}
+        <li><a href="{{ general_news.url}}">{{ general_news.name}}</a></li>
+       
+        {% endfor %}
+    </ul>
+    <h3> Health News</h3>
+    <ul>
+        {% for health_news in health %}
+        <li><a href="{{ health_news.url}}">{{ health_news.name}}</a></li>
+        
+        {% endfor %}
+    </ul>
+    <h3> Science News</h3>
+    <ul>
+        {% for science_news in science %}
+        <li><a href="{{ science_news.url}}">{{ science_news.name}}</a></li>
+        
+        {% endfor %}
+    </ul>
+    <h3> Sports News</h3>
+    <ul>
+        {% for sports_news in sports %}
+        <li><a href="{{ sports_news.url}}">{{ sports_news.name}}</a></li>
+        
+        {% endfor %}
+    </ul>
+    <h3> Technology News</h3>
+    <ul>
+        {% for technology_news in technology %}
+        <li><a href="{{ technology_news.url}}">{{ technology_news.name}}</a></li>
+        
+        {% endfor %}
+    </ul>
+    <!-- Content block -->
+  
+    {% endblock %}
+
 <style>
     .message {
         font-style: Italic;
