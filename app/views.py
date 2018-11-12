@@ -3,8 +3,8 @@ from app import app
 from .request import get_news
 #views
 
-@app.route('/index/<int:index_id>')
-def index(index_id):
+@app.route('/')
+def index():
     '''
     View root page function that returns the index page and its data
     '''
