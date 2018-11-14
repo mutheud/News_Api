@@ -4,14 +4,16 @@ from .models import news
 Sources = news.Sources
 News = news.News
 
-# # Getting api key
-# api_key = None
-# base_url = None
+# Getting api key
+api_key = None
+# Getting the movie base url
+base_url = None
 
-
-api_key = app.config['NEWS_API_KEY']
-sources_url = app.config['NEWS_API_SOURCES_URL']
-articles_url = app.config['NEWS_API_ARTICLES_URL']
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    sources_url = app.config['NEWS_API_SOURCES_URL']
+    articles_url = app.config['NEWS_API_ARTICLES_URL']
 
 def get_sources(category):
     get_news_url = sources_url.format(category, api_key)
