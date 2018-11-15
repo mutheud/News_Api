@@ -1,10 +1,10 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from .request import get_news,get_sources
+from ..request import get_news,get_sources
 
 #views
 
-main.route('/')
+@main.route('/')
 def sources():
     businness_news = get_sources('business')
     entertainment_news  = get_sources('entertainment')
@@ -16,7 +16,7 @@ def sources():
     title = 'Home - Beyond the Headlines'
     return render_template('index.html', title = title, business = businness_news,entertainment= entertainment_news,general = general_news,health = health_news,science =science_news,sports = sports_news,technology=technology_news)
 
-main.route('/headlines')
+@main.route('/headlines')
 def index():
     '''
     View root page function that returns the index page and its data
